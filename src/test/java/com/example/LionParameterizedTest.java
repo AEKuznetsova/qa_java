@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class LionParameterizedTest {
 
     @Mock
-    Feline feline;
+    Feline feline = new Feline();
 
     private final String sex;
     private final boolean expected;

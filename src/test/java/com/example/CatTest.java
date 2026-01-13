@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Mock
-    Feline feline;
+    Feline feline = new Feline();
 
     @Test
     public void getSoundTest() {

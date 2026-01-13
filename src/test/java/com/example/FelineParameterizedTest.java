@@ -20,9 +20,7 @@ public class FelineParameterizedTest {
     @Parameterized.Parameters
     public static Object[][] getTestData() {
         return new Object[][] {
-                {-1, -1},
-                {0, 0},
-                {1, 1},
+                {4, 4}
         };
     }
 

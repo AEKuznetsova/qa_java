@@ -12,32 +12,24 @@ import static org.junit.Assert.assertEquals;
 public class LionTest {
 
     @Mock
-    Feline feline;
+    Feline feline = new Feline();
 
     @Test
     public void getLionFood() throws Exception {
-        try {
-            Lion lion = new Lion(feline, "Самец");
-            Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-            List<String> actual = lion.getFood();
-            List<String> expected = Arrays.asList("Животные", "Птицы", "Рыба");
-            assertEquals(expected,actual);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Lion lion = new Lion(feline, "Самец");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        List<String> actual = lion.getFood();
+        List<String> expected = Arrays.asList("Животные", "Птицы", "Рыба");
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void getLionKittens() {
-        try {
-            Lion lion = new Lion(feline, "Самец");
-            Mockito.when(feline.getKittens()).thenReturn(1);
-            int expected = 1;
-            int actual = lion.getKittens();
-            assertEquals(expected,actual);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void getLionKittens() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
+        Mockito.when(feline.getKittens()).thenReturn(1);
+        int expected = 1;
+        int actual = lion.getKittens();
+        assertEquals(expected,actual);
     }
 
     @Test(expected = Exception.class)

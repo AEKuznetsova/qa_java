@@ -7,7 +7,7 @@ import java.util.List;
 public class AlexTest {
 
     @Mock
-    Feline feline;
+    Feline feline = new Feline();
 
     @Test
     public void getKittensTest() throws Exception {
