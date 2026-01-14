@@ -1,13 +1,24 @@
 package com.example;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+
 import java.util.List;
 
+@RunWith(MockitoJUnitRunner.class)
 public class AlexTest {
 
+    @BeforeEach
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Mock
-    Feline feline = new Feline();
+    Feline feline;
 
     @Test
     public void getKittensTest() throws Exception {

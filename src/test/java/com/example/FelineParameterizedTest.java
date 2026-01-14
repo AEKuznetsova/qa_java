@@ -9,25 +9,25 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class FelineParameterizedTest {
 
-    private final int actualValue;
-    private final int expectedValue;
+    private final int numberOfKittens;
 
-    public FelineParameterizedTest(int actualValue, int expectedValue) {
-        this.actualValue = actualValue;
-        this.expectedValue = expectedValue;
+    public FelineParameterizedTest(int numberOfKittens) {
+        this.numberOfKittens = numberOfKittens;
     }
 
     @Parameterized.Parameters
     public static Object[][] getTestData() {
         return new Object[][] {
-                {4, 4}
+                {2},
+                {3},
+                {4}
         };
     }
 
     @Test
     public void getKittensTest() {
         Feline feline = new Feline();
-        int actual = feline.getKittens(actualValue);
-        assertEquals(expectedValue,actual);
+        int actual = feline.getKittens(numberOfKittens);
+        assertEquals(numberOfKittens, actual);
     }
 }
